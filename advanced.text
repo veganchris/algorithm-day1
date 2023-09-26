@@ -1,0 +1,36 @@
+in = {1, 3, 5, 4, 5, 9, 6, 1, 2, 6, 5, 4, 4, 9, 7 }
+in-count = 15
+
+loop-count = 0
+min = in[0];
+j=0;
+max=0;
+
+for(i=0; i < in-count; i++)
+    if in[i] > max
+       max = in[i]
+    end-if
+end-for
+
+while loop-count < in-count
+
+    min = max
+
+    for(i=0; i < in-count; i++)
+       if in[i] != "*" 
+          if in[i] <= min
+             min = in[i]
+             j = i
+          end-if
+        end-if 
+    end-for
+
+    out[loop-count] = min;
+    in[j] = "*"
+
+end-while
+
+
+
+getmin()
+
